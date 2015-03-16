@@ -64,6 +64,23 @@ module.exports = function (event) {
   var info = normalize(event)
   if (!info) return
 
+  // normalized UTC date
+  info.start = new Date(Date.UTC(
+    event.start.getUTCFullYear(),
+    event.start.getUTCMonth(),
+    event.start.getUTCDate(),
+    event.start.getUTCHours(),
+    event.start.getUTCMinutes()
+  ))
+
+  info.end = new Date(Date.UTC(
+    event.end.getUTCFullYear(),
+    event.end.getUTCMonth(),
+    event.end.getUTCDate(),
+    event.end.getUTCHours(),
+    event.end.getUTCMinutes()
+  ))
+
   return _(event)
     .assign(info)
     .pick(['uid', 'summary', 'description', 'location', 'start', 'end', 'url'])

@@ -16,7 +16,11 @@ var cal = require('ical-generator')({
 })
 
 http.createServer(function (req, res) {
+  console.log('ics requested')
+
   ical.fromURL(process.env.FEED_URL, {}, function (err, result) {
+    console.log('raw ics loaded')
+
     if (err) console.log(err)
 
     cal.events(
@@ -26,6 +30,8 @@ http.createServer(function (req, res) {
         .value()
     )
 
+    console.log('filtered ics served')
+    res.setHeader('Content-Type', 'text/calendar; charset=utf-8')
     cal.serve(res)
   })
 }).listen(process.env.PORT || 3000, function () {
