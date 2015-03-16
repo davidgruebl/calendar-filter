@@ -1,0 +1,27 @@
+{
+  "name": "calendar-filter",
+  "version": "1.0.0",
+  "description": "filter out irrelevant things from my university cal feed ",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boennemann/calendar-filter.git"
+  },
+  "author": "Stephan Bönnemann <stephan@boennemann.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boennemann/calendar-filter/issues"
+  },
+  "homepage": "https://github.com/boennemann/calendar-filter",
+  "dependencies": {
+    "ical": "^0.3.1",
+    "ical-generator": "^0.2.0",
+    "lodash": "^3.5.0"
+  },
+  "devDependencies": {
+    "standard": "^2.11.0"
+  }
+}
