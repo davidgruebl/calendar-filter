@@ -48,12 +48,15 @@ var courses = {
   'Digital Media Systems': {
     summary: 'Digital Media',
     url: 'https://wiki.mediacube.at/wiki/index.php/Digital_Media_Systems_-_SS_2015'
+  },
+  'Frontend Development': {
+    summary: 'Frontend',
+    url: 'https://wiki.mediacube.at/wiki/index.php/Frontend_Development_2_-_SS_2015'
   }
 }
 
 var blacklist = [
-  'MMA GASTVORTRAG',
-  'Frontend Development'
+  'MMA GASTVORTRAG'
 ]
 
 module.exports = function (event) {
@@ -111,7 +114,7 @@ function normalize (event) {
 }
 
 function extras (raw, name) {
-  if (/klausur/i.test(raw)) name += ' Klausur'
-  if (/UB\//i.test(raw)) name += ' Übung'
+  if (/klausur/i.test(raw)) name += ' exam'
+  if (/UB\//i.test(raw)) name += ' exercise'
   return name
 }

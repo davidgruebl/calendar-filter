@@ -4,7 +4,8 @@
   "description": "filter out irrelevant things from my university cal feed ",
   "main": "index.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard",
+    "copy": "scp -r .env index.js normalize.js package.json root@178.62.249.245:/var/www/cal"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/boennemann/calendar-filter",
   "dependencies": {
+    "dotenv": "^1.0.0",
     "ical": "^0.3.1",
     "ical-generator": "^0.2.0",
     "lodash": "^3.5.0"

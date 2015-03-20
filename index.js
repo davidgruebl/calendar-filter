@@ -1,3 +1,4 @@
+require('dotenv').load()
 var http = require('http')
 
 var _ = require('lodash')
@@ -6,11 +7,11 @@ var ical = require('ical')
 var normalize = require('./normalize')
 
 var cal = require('ical-generator')({
-  domain: 'boennemann.me',
+  domain: 'dtg.sexy',
   name: 'Uni Calendar',
   timezone: 'Europe/Berlin',
   prodId: {
-    company: 'boennemann',
+    company: 'dtg',
     product: 'calendar'
   }
 })
